@@ -30,6 +30,10 @@ module.exports.toGcs = function uploadToGcs(objs,end) {
                     element
                 )
             }
+            else{
+                console.log("not ok - "+obj.file_path);
+                onsole.log(err);
+            }
             count++;
 
             if (count == objs.length) {
