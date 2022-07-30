@@ -4,7 +4,7 @@ const NGINX_DIR = "/data/nginx/static/cache/";
 
 module.exports.informNG = function (objs) {
     objs.forEach(element => {
-        let dir = NGINX_DIR + elemen.file_path;
+        let dir = NGINX_DIR + element.file_path;
         if (!fs.existsSync(dir)){
             fs.mkdirSync(dir, { recursive: true });
         }
