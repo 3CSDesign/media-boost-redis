@@ -25,7 +25,7 @@ module.exports.toGcs = function uploadToGcs(objs,end) {
             //console.log(apiResponse);
             //console.log(file);
             if (err!=null) {
-                console.log("ok");
+                console.log("ok - "+obj.file_path);
                 success.push(
                     element
                 )

@@ -32,7 +32,7 @@ module.exports.file_proc = function (files,end){
             file.on("finish", () => {
                 file.close();
                 count++;
-                console.log("Download Completed");
+                console.log(`Download Completed ${count} of ${files.length} `);
                 success.push(
                     {
                         "real_path": real_path,
