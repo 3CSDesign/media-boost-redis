@@ -32,7 +32,7 @@ module.exports.toGcs = function uploadToGcs(objs,end) {
             }
             else{
                 console.log("not ok - "+obj.file_path);
-                onsole.log(err);
+                console.log(err);
             }
             count++;
 
