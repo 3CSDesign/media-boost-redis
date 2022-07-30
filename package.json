@@ -1,0 +1,23 @@
+{
+  "name": "media-boost-redis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3CSDesign/media-boost-redis.git"
+  },
+  "author": "jvcooray@gmail.com",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/3CSDesign/media-boost-redis/issues"
+  },
+  "homepage": "https://github.com/3CSDesign/media-boost-redis#readme",
+  "dependencies": {
+    "@google-cloud/storage": "^6.2.3",
+    "@redis/client": "^1.2.0"
+  }
+}
