@@ -13,7 +13,7 @@ module.exports.file_proc = function (files,end){
             let real_path = file_path.replace("3cs-mb-key-","http://");
         let url = new URL(real_path);
         let options = {
-            host: "127.0.0.1",
+            host: "10.122.0.3",
             port: 80,
             path: `http://${url.hostname}${url.pathname}${url.search}`,
             headers: {
