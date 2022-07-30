@@ -21,7 +21,7 @@ module.exports.toGcs = function uploadToGcs(objs,end) {
             public: true
         };
         bucket.upload(obj.download_path,options, function(err, file, apiResponse) {
-            console.log(err);
+            //console.log(err);
             //console.log(apiResponse);
             //console.log(file);
             if (err==null) {
@@ -35,7 +35,7 @@ module.exports.toGcs = function uploadToGcs(objs,end) {
                 console.log(err);
             }
             count++;
-
+            console.log(`Download Completed ${count} of ${objs.length} `);
             if (count == objs.length) {
                 end(success);
             }
