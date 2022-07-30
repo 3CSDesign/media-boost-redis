@@ -8,6 +8,7 @@ module.exports.informNG = function (objs) {
         if (!fs.existsSync(dir)){
             fs.mkdirSync(dir, { recursive: true });
         }
-        fs.closeSync(fs.openSync(element.file_path+"/"+element.file_name, 'w'));
+        fs.closeSync(fs.openSync(NGINX_DIR + element.file_path+"/"+element.file_name, 'w'));
+        console.log("touched "+ NGINX_DIR + element.file_path+"/"+element.file_name);
     });
 }
