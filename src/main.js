@@ -27,7 +27,7 @@ function pushGCS(obs) {
 //update mysql
 
 function informNginx(objs) {
-    console.log("moced files :"+objs.length);
+    console.log("moved files :"+objs.length);
 }
 
 //delete afterwards

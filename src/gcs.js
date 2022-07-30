@@ -14,7 +14,7 @@ module.exports.toGcs = function uploadToGcs(objs,end) {
 
     objs.forEach(element => {
         let obj = element;
-        console.log(element);
+        //console.log(element);
         const options = {
             destination: obj.file_path+"/"+obj.file_name,
             validation: 'md5',
