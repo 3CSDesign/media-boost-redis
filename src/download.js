@@ -7,12 +7,19 @@ const path = require('path');
 module.exports.file_proc = function (files,end){
     let success = [];
     let count = 0;
-    files.forEach(file_path => {
+    files.forEach(dict => {
         try {
-
+            if (dict.value == "MOVED") {
+                count++;
+                if (count == files.length) {
+                    end(success);
+                }
+            }
+            else{
+            let file_path = dict.key;
             let real_path = file_path.replace("3cs-mb-key-","http://");
-        let url = new URL(real_path);
-        let options = {
+            let url = new URL(real_path);
+            let options = {
             host: "10.122.0.3",
             port: 80,
             path: `http://${url.hostname}${url.pathname}${url.search}`,
@@ -35,6 +42,7 @@ module.exports.file_proc = function (files,end){
                 console.log(`Download Completed ${count} of ${files.length} `);
                 success.push(
                     {
+                        "key": dict.key,
                         "real_path": real_path,
                         "file_path": getDirectory(url),
                         "file_name": getFilename(url),
@@ -46,6 +54,7 @@ module.exports.file_proc = function (files,end){
                 }
             });
             });
+        }
 
         } catch (error) {
             count++;

@@ -7,7 +7,7 @@
 const { file_proc } = require("./download");
 const { toGcs } = require("./gcs");
 const { informNG } = require("./informNG");
-const { getKeys } = require("./redis");
+const { getKeys, setKey } = require("./redis");
 
 //conntect to redis server
 getKeys(proccess);
@@ -29,7 +29,11 @@ function pushGCS(obs) {
 
 function informNginx(objs) {
     console.log("moved files :"+objs.length);
-    informNG(objs);
+    informNG(objs,flushhDB);
 }
 
 //delete afterwards
+
+function flushhDB(dicts) {
+    setKey(dicts);
+}

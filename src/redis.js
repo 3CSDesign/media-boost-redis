@@ -16,5 +16,24 @@ module.exports.getKeys = async function (end) {
 
     const keys = await client.sendCommand(["keys","3cs-mb-*"]);    
     client.quit();
+    let list = [];
+    keys.forEach(element => {
+        let value = await client.get(element);
+        list.push(
+            {
+                "key": element,
+                "value": value
+            }
+        )
+    });
     end(keys);
+}
+
+module.exports.setKey = async function (touched_files) {
+    await client.connect();
+    touched_files.forEach(element => {
+        console.log("removing Redis Entry for "+ element);
+        await client.set(element, "MOVED");
+    });
+    client.quit();
 }
