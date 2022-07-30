@@ -13,21 +13,21 @@ getKeys(proccess);
 //retrive / sort files to be boosted
 
 function proccess(keys) {
-    console.log(keys);
+    console.log("detected links :"+keys.length);
     file_proc(keys,pushGCS)
 }
 
 //push to GCS
 
 function pushGCS(obs) {
-    console.log(obs.length);
+    console.log("downloaded files :"+obs.length);
     toGcs(obs,informNginx)
 }
 
 //update mysql
 
 function informNginx(objs) {
-    console.log(objs.length);
+    console.log("moced files :"+objs.length);
 }
 
 //delete afterwards
